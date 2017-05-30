@@ -1,0 +1,136 @@
+body {
+	background: url('img/background.jpg');
+	background-position: fixed;
+	background-size: 1920px 900px;
+	background-repeat: no-repeat;
+}
+
+nav a {
+	color: white !important;
+	background-color: darkorange;
+}
+.navbar{
+	border: solid darkorange 1px;
+}
+.dropdown-toggle:hover{
+	background-color: orange !important;
+}
+.dropdown-toggle{
+	background-color: darkorange !important;
+}
+.dropdown-menu {
+	background-color: darkorange;
+	/*border-bottom: solid white 1px !important;*/
+}
+
+nav ul li a:hover{
+	background-color: orange !important;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+.navbar-inverse .navbar-toggle:hover {
+    background-color: orange;
+}
+ .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: white;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: orange;
+}
+.banner{
+	display: flex;
+	justify-content: center;
+}
+.navbar {
+	margin-bottom: 0px;
+}
+#slogan-1 {
+	color: #fff;
+	width: 325px;
+	margin: auto;
+	font-size: 35px;
+	text-align: center;
+	margin-top: 180px;
+	list-style: none;
+	font-weight: 600;
+	background-color: black;
+}
+#slogan-2 {
+	color: #fff;
+	width: 600px;
+	margin: auto;
+	font-size: 35px;
+	text-align: center;
+	margin-top: 10px;
+	list-style: none;
+	font-weight: 600;
+	background-color: black;
+}
+.submit-button {
+	color: white;
+    border: 3px solid black;
+    cursor: pointer;
+   	width: 180px;
+   	height: 60px;
+    display: inline-block;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 870px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: darkorange;
+}
+.submit-button:hover {
+	display: inline-block;	
+	font-size: 40px;
+	transition: 0.8s ease;
+	box-shadow: 0 0 50px white;
+	background-color: orange;
+}
+#locations h1 {
+	font-style: bold;
+	text-align: center;
+	margin-top: 525px;
+}
+#provincies {
+	float: left;
+	color: black;
+	width: 350px;
+	height: 625px;
+	border: 3px solid black;
+	font-size: 25px;
+	text-align: center;
+	list-style: none;
+	margin-top: 75px;
+	margin-left: 450px;
+	background-color: darkorange;
+}
+#provincies li {
+	margin-top: 10px;
+}
+
+#provincies a{
+	color: white;
+}
+
+#hoofdsteden {
+	float: right;
+	color: black;
+	width: 350px;
+	height: 625px;
+	border: 3px solid black;
+	font-size: 	25px;
+	text-align: center;
+	list-style: none;
+	margin-top: 75px;
+	margin-right: 450px;
+	background-color: darkorange;
+}
+#hoofdsteden li {
+	margin-top: 10px;
+}
+#hoofdsteden a{
+	color: white;
+}

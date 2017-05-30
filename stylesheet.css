@@ -1,0 +1,188 @@
+<<<<<<< Updated upstream
+body{
+	background-image: url("img/park2.jpg");
+	background-size: cover;
+  background-attachment: fixed;
+  font-family: sans-serif;
+}
+nav a {
+	color: white !important;
+}
+.navbar{
+	border: solid darkorange 1px;
+	border-bottom: solid 2px white;
+=======
+nav a {
+	color: white !important;
+	background-color: darkorange;
+}
+.navbar{
+	border: solid darkorange 1px;
+>>>>>>> Stashed changes
+}
+.dropdown-toggle:hover{
+	background-color: orange !important;
+}
+.dropdown-toggle{
+	background-color: darkorange !important;
+}
+.dropdown-menu {
+	background-color: darkorange;
+	/*border-bottom: solid white 1px !important;*/
+}
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
+nav ul li a:hover{
+	background-color: orange !important;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+.navbar-inverse .navbar-toggle:hover {
+    background-color: orange;
+}
+ .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: white;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: orange;
+}
+.banner{
+	display: flex;
+	justify-content: center;
+}
+.navbar {
+<<<<<<< Updated upstream
+	margin-bottom: 30px;
+}
+.navbar fixed-left{
+	height: 300px;
+}
+.fixed-left{
+	width: 300px;
+	height: 800px;
+	text-align: center;
+}
+
+h4{
+  margin-top: 20px;
+  height: 40px;
+  line-height: 37px;
+  white-space: nowrap;
+  margin-bottom: -6px;
+  box-shadow: 0 2px 2px #cfcac4;
+  display: inline-block;
+  background-color: darkorange;
+  padding: 0 16px;
+  width: 243px;
+  border-radius: 3px;
+  font-size: 15px;
+  color: white;
+  font-family: Helvetica,sans-serif;
+  text-decoration: none;
+}
+h4:hover{
+  cursor: pointer;
+  background-color: #da611e;
+  color: #ff8000;
+}
+h5{
+  height: 40px;
+  line-height: 37px;
+  white-space: nowrap;
+  margin-bottom: -6px;
+  box-shadow: 0 2px 2px #cfcac4;
+  display: inline-block;
+  background-color: black;
+  padding: 0 16px;
+  width: 243px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: Helvetica,sans-serif;
+  text-decoration: none;
+  background-color: white;
+}
+h5:hover{
+  background-color: #eef7fa;
+  cursor: pointer;
+  color: darkorange !important;
+}
+@keyframes topFadeOut {
+  0% {
+    position: absolute;
+    top: -3rem;
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+}
+
+.headingtext{
+  font-size: 4.4rem;
+  position: absolute;
+  left: 2.5rem;
+  top: 6rem;
+  opacity: 1;
+  animation-name: topFadeOut;
+  animation-duration: 2s;
+  color: white;
+  margin-left: 41%;
+}
+.pretpark-container
+{
+  position: relative;
+  left: 525px;
+  top: -700px;
+  width: 850px;
+  height: 150px;
+  background-color: darkorange;
+  color: white;
+  box-shadow: 0 1px 1px black;
+}
+.pretpark-container:hover{
+  background: orange;
+  box-shadow: 0 2px 2px black;
+  cursor:  pointer;
+}
+.pretpark-naam{
+}
+.pretpark-image{
+  float: left;
+  padding: 25px;
+}
+.pretpark-informatie{
+  float: right;
+  margin-right: 500px;
+}
+<<<<<<< Updated upstream
+
+.pretpark-locatie{
+  margin: 5px;
+}
+
+.pretpark-openingstijden{
+  margin: 5px;
+}
+
+.pretpark-prijs{
+  margin: 5px;
+}
+nav h5 a{
+  color: orange !important;
+  font-weight: bold;
+}
+nav h5 a:hover{
+  color: darkorange !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+=======
+=======
+	margin-bottom: 0px;
+}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

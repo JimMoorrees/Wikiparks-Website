@@ -11,6 +11,7 @@ nav a {
 }
 .navbar{
 	border: solid darkorange 1px;
+	border-bottom: solid 2px white;	
 }
 .dropdown-toggle:hover{
 	background-color: orange !important;
@@ -83,11 +84,29 @@ nav ul li a:hover{
     text-decoration: none;
     background-color: darkorange;
 }
+.submit-button a:hover, a:link, a:active a:visited {
+	text-decoration: none;
+}
+
 .submit-button:hover {
 	display: flex;
 	transition: 0.8s ease;
 	box-shadow: 0 0 50px white;
+	text-decoration: none;
 	background-color: orange;
+}
+
+.footer {
+  left: 0;
+  right: 0;
+  color: #fff;
+  bottom: 0;
+  padding: 1rem;
+  position: absolute;
+  font-size: 20px;
+  border-top: 2px solid white;
+  background-color: darkorange;
+  text-align: center;
 }
 /* Register form  */
 
@@ -127,4 +146,16 @@ input[type="submit"]:hover{
 .header a{
 	color:#333;
 	text-decoration: none;
+}
+
+@media (max-width: 500px){
+	.slogan-1{
+		width: 250px;
+		font-size: 25px;
+	}
+	.slogan-2{
+		width: 300px;
+		font-size: 25px;
+	}
+
 }

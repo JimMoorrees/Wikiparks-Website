@@ -1,10 +1,6 @@
 <?php 
 session_start();
-
-
-
- ?>;
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,10 +39,11 @@ session_start();
 </header>
     <div id="park-finder">
       	<div class="slogan-1"><li>Pretparken vinden</li></div>  
-			<div class="slogan-2"><li>Vind alle pretparken in Nederland!</li></div>
-				<a href="index2.php"><input  type="zoek" name="submit-button" class="submit-button" value="Zoek!"></a>
-			</div>
+		<div class="slogan-2"><li>Vind alle pretparken in Nederland!</li></div>
+			<a href="index2.php"><input type="zoek" name="submit-button" class="submit-button" value="Zoek!"></a>
 		</div>
+	</div>
+	<div class="footer">©Limbo's</strong>.</div>
 </body>
 </html>
 

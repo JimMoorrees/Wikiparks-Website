@@ -134,26 +134,26 @@ h5:hover{
   box-shadow: 0 2px 2px black;
   cursor:  pointer;
 }
-.pretpark-naam{
+#pretpark-naam{
 }
-.pretpark-image{
+#pretpark-image{
   float: left;
   padding: 25px;
 }
-.pretpark-informatie{
+#pretpark-informatie{
   float: right;
   margin-right: 500px;
 }
 
-.pretpark-locatie{
+#pretpark-locatie{
   margin: 5px;
 }
 
-.pretpark-openingstijden{
+#pretpark-openingstijden{
   margin: 5px;
 }
 
-.pretpark-prijs{
+#pretpark-prijs{
   margin: 5px;
 }
 nav h5 a{

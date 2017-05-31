@@ -1,3 +1,11 @@
+<?php
+include ('functions/function.php');
+ $connect = connectToDB();
+
+$query = "SELECT `ParkNaam`, `ParkLocatie`, `ParkOpeningstijden`, `ParkPrijzen`,`ParkBeschrijving` FROM `park`;";
+$result = $connect->query($query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,15 +94,23 @@
 </div>
 
 <div class="pretpark-container">
-  <div class="pretpark-image"><img src="" width="150px" height="100px"></div>
-  <div class="pretpark-informatie">
-  <div class="pretpark-naam"><h3>naam1</h3></div>
-  <div class="pretpark-locatie">rotterdam</div>
-  <div class="pretpark-openingstijden">00:00 - 00:00</div>
-  <div class="pretpark-prijs">€99,99</div>
   
+  <?php
+  while($pretpark = $result->fetch_assoc())
+    {
+      ?>
+      <div id="pretparken">
+      <div id="pretpark-image"><img height="100px" width="175px" src="img/<?php echo $pretpark['ParkImage']?>"></div>
+      <div id="pretpark-naam"><p><?php echo $pretpark['ParkNaam']?></p></div>
+      <div id="pretpark-locatie"><p><?php echo $pretpark['ParkLocatie']?></p></div>
+      <div id="pretpark-openingstijden"><p><?php echo $pretpark['ParkOpeningstijden']?></p></div>
+      <div id="pretpark-prijs"><p><?php echo $pretpark['ParkPrijzen']?></p></div>
+      <div id="pretpark-beschrijving"><p><?php echo $pretpark['ParkBeschrijving']?></p></div>
 
-  </div>
+      </div>
+      <?php
+    }
+    ?>
 
 </div>
 

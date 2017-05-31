@@ -1,0 +1,90 @@
+body {
+	background: url('img/park2.jpg');
+	background-position: fixed;
+	background-size: 1920px 900px;
+	background-repeat: no-repeat;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+
+nav a {
+	color: white !important;
+	background-color: darkorange;
+}
+.navbar{
+	border: solid darkorange 1px;
+}
+.dropdown-toggle:hover{
+	background-color: orange !important;
+}
+.dropdown-toggle{
+	background-color: darkorange !important;
+}
+.dropdown-menu {
+	background-color: darkorange;
+	/*border-bottom: solid white 1px !important;*/
+}
+
+nav ul li a:hover{
+	background-color: orange !important;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+.navbar-inverse .navbar-toggle:hover {
+    background-color: orange;
+}
+ .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: white;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: orange;
+}
+.banner{
+	display: flex;
+	justify-content: center;
+}
+.navbar {
+	margin-bottom: 0px;
+}
+input[type="text"], input[type="password"]{
+	outline:none;
+	padding:10px;
+	display:block;
+	width:300px;
+	border-radius: 3px;
+	border:1px solid #eee;
+	margin:20px auto;
+}
+
+input[type="submit"]{
+	padding:10px;
+	color:#fff;
+	background:#0098cb;
+	width:320px;
+	margin:20px auto;
+	margin-top:0px;
+	border:0px;
+	border-radius: 3px;
+	cursor:pointer;
+}
+
+input[type="submit"]:hover{
+	background:#00b8eb;
+}
+
+.header{
+	border-bottom:1px solid #eee;
+	padding:10px 0px;
+	width:100%;
+	text-align:center;
+}
+
+.header a{
+	color: #D0CECE;
+	text-decoration: none;
+}
+h1{
+	color: white;
+}

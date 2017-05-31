@@ -1,9 +1,34 @@
-<?php 
+<?php
+
 session_start();
 
+if( isset($_SESSION['user_id']) ){
+	header("Location: /");
+}
 
+require 'includes/config.php';
 
- ?>;
+if(!empty($_POST['email']) && !empty($_POST['password'])):
+	
+	$records = $conn->prepare('SELECT id,email,password FROM users WHERE email = :email');
+	$records->bindParam(':email', $_POST['email']);
+	$records->execute();
+	$results = $records->fetch(PDO::FETCH_ASSOC);
+
+	$message = '';
+
+	if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
+
+		$_SESSION['user_id'] = $results['id'];
+		header("Location: index.php");
+
+	} else {
+		$message = 'Sorry, those credentials do not match';
+	}
+
+endif;
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +37,7 @@ session_start();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styleRegister.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -58,46 +83,27 @@ session_start();
 	  </div>
 	</nav>
 </header>
-    <div id="park-finder">
-      	<div id="slogan-1"><li>Pretparken vinden</li></div>  
-			<div id="slogan-2"><li>Vind alle pretparken in Nederland!</li></div>
-				<input type="zoek" name="submit-button" class="submit-button" value="Zoek!">
-			</div>
-		</div>
-	</div>
-	<div id="locations">
-		<h1>Vind pretparken op deze locaties!</h1>
-	</div>
-	<div id="provincies">
-		<h1>Provincies</h1>
-		<a href=""><li>Groningen</li></a>
-		<a href=""><li>Friesland</li></a>
-		<a href=""><li>Drenthe</li></a>
-		<a href=""><li>Overijssel</li></a>
-		<a href=""><li>Flevoland</li></a>
-		<a href=""><li>Gelderland</li></a>
-		<a href=""><li>Utrecht</li></a>
-		<a href=""><li>Noord-Holland</li></a>
-		<a href=""><li>Zuid-Holland</li></a>
-		<a href=""><li>Zeeland</li></a>
-		<a href=""><li>Noord-Brabant</li></a>
-		<a href=""><li>Limburg</li></a>
-	</div>
-	<div id="hoofdsteden">
-		<h1>Steden</h1>
-		<a href=""><li>Groningen</li></a>
-		<a href=""><li>Leeuwarden</li></a>
-		<a href=""><li>Assen</li></a>
-		<a href=""><li>Zwolle</li></a>
-		<a href=""><li>Lelystad</li></a>
-		<a href=""><li>Arnhem</li></a>
-		<a href=""><li>Utrecht</li></a>
-		<a href=""><li>Haarlem</li></a>
-		<a href=""><li>Den Haag</li></a>
-		<a href=""><li>Middelburg</li></a>
-		<a href=""><li>'s-Hertogenbosch</li></a>
-		<a href=""><li>Maastricht</li></a>
-	</div>
+
+
+
+	<?php if(!empty($message)): ?>
+		<p><?= $message ?></p>
+	<?php endif; ?>
+
+	<h1>Login</h1>
+	<span style="color: white;">or <a href="signup.php" style="color: #3BD4D6;">register here</a></span>
+
+	<form action="login.php" method="POST">
+		
+		<input type="text" placeholder="Enter your email" name="email">
+		<input type="password" placeholder="and password" name="password">
+
+		<input type="submit">
+
+	</form>
+
+</body>
+</html>
 </body>
 </html>
 

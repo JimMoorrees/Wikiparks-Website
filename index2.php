@@ -31,7 +31,7 @@ $result = $connect->query($query);
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a style="background-color: darkorange;" href="#">Home</a></li>
+        <li class="active"><a href="index.php" style="background-color: darkorange;" href="#">Home</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Locaties<span class="caret"></span></a>
           <ul class="dropdown-menu">

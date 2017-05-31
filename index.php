@@ -1,6 +1,10 @@
 <?php 
 session_start();
+<<<<<<< HEAD
 ?>
+=======
+ ?>
+>>>>>>> master
 <!DOCTYPE html>
 <html lang="en">
 <head>

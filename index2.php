@@ -19,7 +19,6 @@ $result = $connect->query($query);
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <nav class="navbar navbar-inverse" style="border-radius: 0px; background-color: darkorange;">
   <div class="container-fluid">
     <div class="navbar-header"> 

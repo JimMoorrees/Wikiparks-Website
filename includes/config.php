@@ -1,7 +1,7 @@
 <?php
 $server = 'localhost';
 $username = 'root';
-$password = 'usbw';
+$password = '';
 $database = 'users';
 
 try{

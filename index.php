@@ -1,10 +1,17 @@
 <?php 
+
 session_start();
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 ?>
 =======
  ?>
 >>>>>>> master
+=======
+
+?>
+
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +25,7 @@ session_start();
 </head>
 <body>
 <header>
-	<nav class="navbar navbar-inverse" style="border-radius: 0px; background-color: darkorange;">
+	<nav class="navbar navbar-inverse" style="border-radius: 0px; background-color: darkorange; margin: 0; padding: 0;">
 	  <div class="container-fluid">
 	    <div class="navbar-header"> 
 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

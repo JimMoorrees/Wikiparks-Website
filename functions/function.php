@@ -4,7 +4,7 @@ function connectToDB()
 {
 	$host	= "localhost"; // naam / locatie database server
 	$user	= "root"; // gebruikersnaam om in te loggen op de database server
-	$pass	= "usbw"; // wachtwoord usbw voor usb webserver
+	$pass	= ""; // wachtwoord usbw voor usb webserver
 	$dB		= "users"; // naam van de database
 	
 	$conn = new mysqli($host, $user, $pass, $dB);

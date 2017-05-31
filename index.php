@@ -61,7 +61,7 @@ session_start();
     <div id="park-finder">
       	<div id="slogan-1"><li>Pretparken vinden</li></div>  
 			<div id="slogan-2"><li>Vind alle pretparken in Nederland!</li></div>
-				<input type="zoek" name="submit-button" class="submit-button" value="Zoek!">
+				<a href="index2.php"><input  type="zoek" name="submit-button" class="submit-button" value="Zoek!"></a>
 			</div>
 		</div>
 	</div>

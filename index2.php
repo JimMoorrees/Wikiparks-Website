@@ -31,23 +31,6 @@ $result = $connect->query($query);
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php" style="background-color: darkorange;" href="#">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Locaties<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Drenthe</a></li>
-            <li><a href="#">Flevoland</a></li>
-            <li><a href="#">Friesland</a></li>
-            <li><a href="#">Gelderland</a></li>
-            <li><a href="#">Groningen</a></li>
-            <li><a href="#">Limburg</a></li>
-            <li><a href="#">Noord-Brabant</a></li>
-            <li><a href="#">Noord-Holland</a></li>
-            <li><a href="#">Overijssel</a></li>
-            <li><a href="#">Utrecht</a></li>
-            <li><a href="#">Zeeland</a></li>
-            <li><a href="#">Zuid-Holland</a></li>
-          </ul>
-        </li>
         <li><a href="#">About</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
@@ -64,15 +47,15 @@ $result = $connect->query($query);
 <div class="container-fluid">
       <nav class="fixed-left">
         <h4>Zoeken op leeftijd</h4>
-        <h5><a href="#">0-5 jaar</a></h5><br/>
-        <h5><a href="#">5-10 jaar</a></h5><br/>
-        <h5><a href="#">10-13 jaar</a></h5><br/>
-        <h5><a href="#">13+ jaar</a></h5><br/>
+        <h5><a href="#">0-3 jaar</a></h5><br/>
+        <h5><a href="#">3-12 jaar</a></h5><br/>
+        <h5><a href="#">12-60 jaar</a></h5><br/>
+        <h5><a href="#">60+ jaar</a></h5><br/>
         <h4>Zoeken op Entree Prijs</h4>
-        <h5><a href="#">5-10 Euro</a></h5><br/>
-        <h5><a href="#">10-15 Euro</a></h5><br/>
-        <h5><a href="#">15-20 Euro</a></h5><br/>
-        <h5><a href="#">25+ Euro</a></h5><br/>
+        <h5><a href="#">5-15 Euro</a></h5><br/>
+        <h5><a href="#">15-25 Euro</a></h5><br/>
+        <h5><a href="#">25-35 Euro</a></h5><br/>
+        <h5><a href="#">35+ Euro</a></h5><br/>
         <h4>Zoeken op Locatie</h4>
         <h5><a href="#">Drenthe</a></h5><br/>
         <h5><a href="#">Flevoland</a></h5><br/>
@@ -112,6 +95,5 @@ $result = $connect->query($query);
     ?>
 
 </div>
-
 </body>
 </html>

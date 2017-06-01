@@ -1,6 +1,17 @@
 <?php 
+
 session_start();
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+?>
+=======
  ?>
+>>>>>>> master
+=======
+
+?>
+
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +25,7 @@ session_start();
 </head>
 <body>
 <header>
-	<nav class="navbar navbar-inverse" style="border-radius: 0px; background-color: darkorange;">
+	<nav class="navbar navbar-inverse" style="border-radius: 0px; background-color: darkorange; margin: 0; padding: 0;">
 	  <div class="container-fluid">
 	    <div class="navbar-header"> 
 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -39,10 +50,11 @@ session_start();
 </header>
     <div id="park-finder">
       	<div class="slogan-1"><li>Pretparken vinden</li></div>  
-			<div class="slogan-2"><li>Vind alle pretparken in Nederland!</li></div>
-				<a href="index2.php"><input  type="zoek" name="submit-button" class="submit-button" value="Zoek!"></a>
-			</div>
+		<div class="slogan-2"><li>Vind alle pretparken in Nederland!</li></div>
+			<a href="index2.php"><input type="zoek" name="submit-button" class="submit-button" value="Zoek!"></a>
 		</div>
+	</div>
+	<div class="footer">©Limbo's</strong>.</div>
 </body>
 </html>
 

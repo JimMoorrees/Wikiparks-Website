@@ -1,8 +1,12 @@
 body {
 	background: url('img/park2.jpg');
-	background-position: fixed;
-	background-size: 1920px 900px;
-	background-repeat: no-repeat;
+	background-size: cover;
+<<<<<<< Updated upstream
+ 	background-attachment: fixed;
+=======
+  	background-attachment: fixed;
+>>>>>>> Stashed changes
+  	font-family: sans-serif;
 	margin:0px;
 	padding:0px;
 	text-align:center;

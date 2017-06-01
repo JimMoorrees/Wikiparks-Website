@@ -125,13 +125,12 @@ h5:hover{
   top: -700px;
   width: 850px;
   height: 150px;
-  background-color: darkorange;
   color: white;
   box-shadow: 0 1px 1px black;
 }
-.pretpark-container:hover{
+#pretparken:hover{
   background: orange;
-  box-shadow: 0 2px 2px black;
+  box-shadow: 0 2px 3px black;
   cursor:  pointer;
 }
 #pretpark-naam{
@@ -172,3 +171,7 @@ nav h5 a:hover{
   white-space: nowrap;
   height: 850px;
 }*/
+#pretparken{
+  background-color: darkorange;
+  box-shadow: 0 2px 2px black;
+}

@@ -52,8 +52,8 @@ $result = $connect->query($query);
         <li><a href="#">FAQ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -100,7 +100,7 @@ $result = $connect->query($query);
       ?>
       <div id="pretparken">
       <div id="pretpark-image"><img height="100px" width="175px" src="img/<?php echo $pretpark['ParkImage']?>"></div>
-      <div id="pretpark-naam"><p><?php echo $pretpark['ParkNaam']?></p></div>
+      <div id="pretpark-naam"><h3><?php echo $pretpark['ParkNaam']?></h3></div>
       <div id="pretpark-locatie"><p><?php echo $pretpark['ParkLocatie']?></p></div>
       <div id="pretpark-openingstijden"><p><?php echo $pretpark['ParkOpeningstijden']?></p></div>
       <div id="pretpark-prijs"><p><?php echo $pretpark['ParkPrijzen']?></p></div>

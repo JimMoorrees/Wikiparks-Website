@@ -3,7 +3,8 @@
 session_start();
 
 if( isset($_SESSION['user_id']) ){
-	header("Location: /");
+	header("Location: /WikiParksWeb/Wikiparks-Website");
+	exit();
 }
 
 require 'includes/config.php';
@@ -47,49 +48,7 @@ endif;
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<header>
-	<nav class="navbar navbar-inverse" style="border-radius: 0px; background-color: darkorange;">
-	  <div class="container-fluid">
-	    <div class="navbar-header"> 
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>                        
-	      </button>
-	    </div>
-	    <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a style="background-color: darkorange;" href="index.php">Home</a></li>
-	        <li class="dropdown">
-	          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Locaties<span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Drenthe</a></li>
-	            <li><a href="#">Flevoland</a></li>
-	            <li><a href="#">Friesland</a></li>
-	            <li><a href="#">Gelderland</a></li>
-	            <li><a href="#">Groningen</a></li>
-	            <li><a href="#">Limburg</a></li>
-	            <li><a href="#">Noord-Brabant</a></li>
-	            <li><a href="#">Noord-Holland</a></li>
-	            <li><a href="#">Overijssel</a></li>
-	            <li><a href="#">Utrecht</a></li>
-	            <li><a href="#">Zeeland</a></li>
-	            <li><a href="#">Zuid-Holland</a></li>
-	          </ul>
-	        </li>
-	        <li><a href="#">About</a></li>
-	        <li><a href="#">FAQ</a></li>
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-	        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	      </ul>
-	    </div>
-	  </div>
-	</nav>
-</header>
-
-
+	<?php require_once('includes/header.php'); ?>
 
 	<?php if(!empty($message)): ?>
 		<p><?= $message ?></p>

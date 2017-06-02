@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('functions/function.php');
  $connect = connectToDB();
 
@@ -19,6 +20,7 @@ $result = $connect->query($query);
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<<<<<<< Updated upstream
 <nav class="navbar navbar-inverse" style="border-radius: 0px; background-color: darkorange;">
   <div class="container-fluid">
     <div class="navbar-header"> 
@@ -41,6 +43,11 @@ $result = $connect->query($query);
     </div>
   </div>
 </nav>
+=======
+
+<?php require_once('includes/header.php'); ?>
+
+>>>>>>> Stashed changes
 <!--<div class="banner">
   <img src="img/banner3.jpeg" width="100%" height="250px;">
 </div>-->

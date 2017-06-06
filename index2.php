@@ -3,7 +3,7 @@ session_start();
 include ('functions/function.php');
  $connect = connectToDB();
 
-$query = "SELECT `ParkNaam`, `ParkLocatie`, `ParkOpeningstijden`, `ParkPrijzen`,`ParkBeschrijving` FROM `park`;";
+$query = "SELECT `ParkNaam`, `ParkLocatie`, `ParkImage`, `ParkOpeningstijden`, `ParkPrijzen`,`ParkBeschrijving` FROM `park`;";
 $result = $connect->query($query);
 ?>
 
@@ -27,11 +27,6 @@ $result = $connect->query($query);
 </div>-->
 <div class="container-fluid">
       <nav class="fixed-left">
-        <h4>Zoeken op leeftijd</h4>
-        <h5><a href="#">0-3 jaar</a></h5><br/>
-        <h5><a href="#">3-12 jaar</a></h5><br/>
-        <h5><a href="#">12-60 jaar</a></h5><br/>
-        <h5><a href="#">60+ jaar</a></h5><br/>
         <h4>Zoeken op Entree Prijs</h4>
         <h5><a href="#">5-15 Euro</a></h5><br/>
         <h5><a href="#">15-25 Euro</a></h5><br/>
@@ -50,6 +45,11 @@ $result = $connect->query($query);
         <h5><a href="#">Utrecht</a></h5><br/>
         <h5><a href="#">Zeeland</a></h5><br/>
         <h5><a href="#">Zuid-Holland</a></h5><br/>
+        <h4>Gemaakt Door:</h4>
+        <h5><a href="#">Jim Moorrees</a></h5><br/>
+        <h5><a href="#">Stan Rutten</a></h5><br/>
+        <h5><a href="#">Jacky Nguyen</a></h5><br/>
+        <h5><a href="#">©Limbo's. All Rights Reserved.</a></h5><br/>
       </nav>
 </div>
 <div class="headingtext">
@@ -63,11 +63,11 @@ $result = $connect->query($query);
     {
       ?>
       <div id="pretparken">
-      <div id="pretpark-image"><img height="100px" width="175px" src="img/<?php echo $pretpark['ParkImage']?>"></div>
+      <div id="pretpark-image"><img height="120px" width="200px" src="/Wikiparks-Website/img/<?php echo $pretpark['ParkImage']?>"></div>
       <div id="pretpark-naam"><h3><?php echo $pretpark['ParkNaam']?></h3></div>
-      <div id="pretpark-locatie"><p><?php echo $pretpark['ParkLocatie']?></p></div>
-      <div id="pretpark-openingstijden"><p><?php echo $pretpark['ParkOpeningstijden']?></p></div>
-      <div id="pretpark-prijs"><p><?php echo $pretpark['ParkPrijzen']?></p></div>
+      <div id="pretpark-locatie"><p>Locatie: <?php echo $pretpark['ParkLocatie']?></p></div>
+      <div id="pretpark-openingstijden"><p> Openingstijden: <?php echo $pretpark['ParkOpeningstijden']?></p></div>
+      <div id="pretpark-prijs"><p> Ticket Prijzen: <?php echo $pretpark['ParkPrijzen']?></p></div>
       <div id="pretpark-beschrijving"><p><?php echo $pretpark['ParkBeschrijving']?></p></div>
 
       </div>

@@ -124,9 +124,19 @@ h5:hover{
   left: 525px;
   top: -700px;
   width: 850px;
-  height: 150px;
   color: white;
-  box-shadow: 0 1px 1px black;
+  /*box-shadow: 0 1px 1px black;*/
+  background-attachment: fixed;
+  overflow: scroll;
+  height: 810px;
+  overflow-x: hidden;
+  border:none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+::-webkit-scrollbar { 
+    display: none; 
 }
 #pretparken:hover{
   background: orange;
@@ -138,6 +148,7 @@ h5:hover{
 #pretpark-image{
   float: left;
   padding: 25px;
+  padding-top: 40px;
 }
 #pretpark-informatie{
   float: right;
@@ -174,4 +185,60 @@ nav h5 a:hover{
 #pretparken{
   background-color: darkorange;
   box-shadow: 0 2px 2px black;
+  margin-bottom: 10px;
+}
+.flex-container
+{
+  display: flex;
+  position: relative;
+}
+.container-fluid{
+
+}
+@media only screen and (max-width : 375px) 
+{
+  .headingtext
+  {
+    position: absolute;
+    margin-left: 10px;
+    animation-name: none;
+    animation-duration: 0s;
+  }
+}
+.searchBar{
+  color: darkorange;
+  background-color: darkorange;
+  padding: 10px;
+  border: solid 2px white;
+  }
+#pretpark-table td, th{
+    padding: 8px;
+}
+
+#pretpark-table tr:nth-child(odd){
+  background-color: darkorange;
+  box-shadow: 0 2px 2px black;
+}
+
+
+#pretpark-table tr:hover {background-color: orange; cursor: pointer;}
+
+#pretpark-table th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: darkorange;
+  color: white;
+
+}
+#pretpark-table{
+   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.filler{
+  height: 25px;
+}
+#pretpark-table td
+{
 }

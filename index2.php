@@ -3,8 +3,32 @@ session_start();
 include ('functions/function.php');
  $connect = connectToDB();
 
-$query = "SELECT `ParkNaam`, `ParkLocatie`, `ParkImage`, `ParkOpeningstijden`, `ParkPrijzen`,`ParkBeschrijving` FROM `park`;";
+$query = "SELECT `ParkId`,`ParkNaam`, `ParkLocatie`, `ParkImage`, `ParkOpeningstijden`, `ParkPrijzen`,`ParkBeschrijving` FROM `park`;";
 $result = $connect->query($query);
+
+
+
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    // search in all table columns
+    // using concat mysql function
+    $query2 = "SELECT * FROM `park` WHERE `ParkNaam` LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query2);
+    
+}
+ else {
+    $query2 = "SELECT * FROM `park` ORDER BY  `ParkId` ASC ";
+    $search_result = filterTable($query2);
+}
+
+// function to connect and execute the query
+function filterTable($query2)
+{
+    $connect = mysqli_connect("localhost", "root", "usbw", "users");
+    $filter_Result = mysqli_query($connect, $query2);
+    return $filter_Result;
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +51,13 @@ $result = $connect->query($query);
 </div>-->
 <div class="container-fluid">
       <nav class="fixed-left">
+      
+<div class="searchBar">
+      <form action="index2.php" method="post">
+      <input type="text" name="valueToSearch" />
+      <input type="submit" name="search" value="Search!" />
+      </form>
+</div>
         <h4>Zoeken op Entree Prijs</h4>
         <h5><a href="#">5-15 Euro</a></h5><br/>
         <h5><a href="#">15-25 Euro</a></h5><br/>
@@ -56,24 +87,45 @@ $result = $connect->query($query);
 <img width="300px;" height="75px;" src="img/logowikiparks.png">
 </div>
 
-<div class="pretpark-container">
-  
+<!-- <div class="pretpark-container">
   <?php
-  while($pretpark = $result->fetch_assoc())
+  //while($pretpark = $result->fetch_assoc())
     {
       ?>
       <div id="pretparken">
-      <div id="pretpark-image"><img height="120px" width="200px" src="/Wikiparks-Website/img/<?php echo $pretpark['ParkImage']?>"></div>
-      <div id="pretpark-naam"><h3><?php echo $pretpark['ParkNaam']?></h3></div>
-      <div id="pretpark-locatie"><p>Locatie: <?php echo $pretpark['ParkLocatie']?></p></div>
-      <div id="pretpark-openingstijden"><p> Openingstijden: <?php echo $pretpark['ParkOpeningstijden']?></p></div>
-      <div id="pretpark-prijs"><p> Ticket Prijzen: <?php echo $pretpark['ParkPrijzen']?></p></div>
-      <div id="pretpark-beschrijving"><p><?php echo $pretpark['ParkBeschrijving']?></p></div>
+      <div id="pretpark-image"><img height="120px" width="200px" src="/Wikiparks-Website/img/<?php //echo $pretpark['ParkImage']?>"></div>
+      <div id="pretpark-naam"><h3><?php //echo $pretpark['ParkNaam']?></h3></div>
+      <div id="pretpark-locatie"><p>Locatie: <?php //echo $pretpark['ParkLocatie']?></p></div>
+      <div id="pretpark-openingstijden"><p> Openingstijden: <?php //echo $pretpark['ParkOpeningstijden']?></p></div>
+      <div id="pretpark-prijs"><p> Ticket Prijzen: <?php //echo $pretpark['ParkPrijzen']?></p></div>
+      <div id="pretpark-beschrijving"><p><?php //echo $pretpark['ParkBeschrijving']?></p></div>
 
       </div>
       <?php
     }
-    ?>
+    ?> -->
+      
+      <div class="pretpark-container">
+      <table id="pretpark-table">
+      <?php while($pretpark = mysqli_fetch_array($search_result)){ 
+      echo "<tr>";
+      if(file_exists(__DIR__ . '/img/'. $pretpark['ParkImage'])): ?>
+      <td><img height="125px;" width="200px;"" src="/Wikiparks-Website/img/<?php print($pretpark['ParkImage']); ?>"></td>
+      <?php else: ?>
+      <?php endif; 
+      echo "<td>".$pretpark['ParkNaam']."</td>";
+      echo "<td>".$pretpark['ParkLocatie']."</td>";
+      echo "<td>".$pretpark['ParkOpeningsTijden']."</td>";
+      echo "<td>".$pretpark['ParkPrijzen']."</td>";
+      echo "<td>".$pretpark['ParkBeschrijving']."</td>";
+      echo "</tr>"; 
+      ?> 
+      <tr class="filler"></tr> 
+      <?php
+      }
+      ?>       
+      </table>     
+      </div>
 
 </div>
 </body>

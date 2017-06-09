@@ -12,11 +12,15 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="index.php" style="background-color: darkorange;" >Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="index2.php">Zoek</a></li>
+           <?php if(isset($_SESSION['user_id'])): ?>
+            <li><a href="dashboard.php"><span class=" glyphicon glyphicon-tasks"></span> Dashboard</a></li>
+          <?php endif ?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <?php if(isset($_SESSION['user_id'])): ?>
-            <li><a href="#"><span class="glyphicon glyphicon-thumbs-up"></span> Welcome</a></li>
+            <li><a ><span class="glyphicon glyphicon-user"></span> <b>Logged in as:</b> <?php echo $_SESSION['email'] ?></a></li>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> <b>Logout</b></a></li>
           <?php else: ?>
             <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

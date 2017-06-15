@@ -53,7 +53,7 @@ if(isset($_POST['top_3'])) {
 
 	<form action="dashboard.php" method="POST" class="demo">
 		
-		<h1 style="margin-top: 25px;">Kies hier je top 3 leukste pretpark</h1>
+		<h1 style="margin-top: 25px;">Kies hier je top 3 leukste pretparken</h1>
 
 		<!-- <input type="text" placeholder="Leukste pretpark" name="top_1"> -->
 		<select class="balck" name="top_1">
@@ -88,14 +88,14 @@ if(isset($_POST['top_3'])) {
 
 	</form>
 
-	<h1>Zie hier je top 3 preparken:<?php if( isset($_SESSION['user_id']))
+	<h1>Zie hier je top 3 preparken: <?php if( isset($_SESSION['user_id']))
 		{ 
 			echo $_SESSION['email']; 
 		}  
 		else {
 			echo " gebruiker";
 		}
-		?></h1>
+		?>.</h1>
 
 	<table border="1" style="color: white; width: 75%; margin-left: auto; margin-right: auto; margin-top: 25px;">
 	<tr>

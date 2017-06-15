@@ -1,5 +1,5 @@
 <?php
 	session_start();
 	session_destroy();
-	header("Location: /WikiParksWeb/Wikiparks-Website");
+	header("Location: /Wikiparks-Website");
 ?>

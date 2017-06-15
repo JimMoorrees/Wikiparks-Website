@@ -62,7 +62,7 @@ h4{
   display: inline-block;
   background-color: darkorange;
   padding: 0 16px;
-  width: 243px;
+  width: 296px;
   border-radius: 3px;
   font-size: 15px;
   color: white;
@@ -83,7 +83,7 @@ h5{
   display: inline-block;
   background-color: black;
   padding: 0 16px;
-  width: 243px;
+  width: 296px;
   border-radius: 3px;
   font-size: 15px;
   font-family: Helvetica,sans-serif;
@@ -238,7 +238,4 @@ nav h5 a:hover{
 }
 .filler{
   height: 25px;
-}
-#pretpark-table td
-{
 }

@@ -3,32 +3,42 @@ session_start();
 include ('functions/function.php');
  $connect = connectToDB();
 
-$query = "SELECT `ParkId`,`ParkNaam`, `ParkLocatie`, `ParkImage`, `ParkOpeningstijden`, `ParkPrijzen`,`ParkBeschrijving` FROM `park`;";
-$result = $connect->query($query);
+$query = "SELECT `ParkId`,`ParkNaam`, `ParkNavigatiePrijzen`, `ParkLocatie`, `ParkProvincie`, `ParkImage`, `ParkOpeningsTijden`, `ParkPrijzen`,`ParkBeschrijving` FROM `park` WHERE 1=1";
 
+if(isset($_POST['search'])) 
+{
+  $query .= ' AND `ParkNaam` LIKE "%' . $_POST['search'] . '%"';
+} 
+  else if(isset($_GET['location'])) {
+  $query .= ' AND `ParkProvincie` = "' . $_GET['location'] . '"';
+}
+  else if(isset($_GET['navprice'])) {
+    $query .= ' AND `ParkNavigatiePrijzen` = "' . $_GET['navprice'] . '"';
+}
 
-
-if(isset($_POST['search']))
+/*if(isset($_POST['search']))
 {
     $valueToSearch = $_POST['valueToSearch'];
     // search in all table columns
     // using concat mysql function
-    $query2 = "SELECT * FROM `park` WHERE `ParkNaam` LIKE '%".$valueToSearch."%'";
-    $search_result = filterTable($query2);
+    $query = "SELECT * FROM `park` WHERE `ParkNaam` LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query);
     
 }
  else {
-    $query2 = "SELECT * FROM `park` ORDER BY  `ParkId` ASC ";
-    $search_result = filterTable($query2);
+    $query = "SELECT * FROM `park` ORDER BY  `ParkId` ASC ";
+    $search_result = filterTable($query);
 }
 
 // function to connect and execute the query
-function filterTable($query2)
+function filterTable($query)
 {
-    $connect = mysqli_connect("localhost", "root", "usbw", "users");
-    $filter_Result = mysqli_query($connect, $query2);
+    $connect = mysqli_connect("localhost", "root", "", "users");
+    $filter_Result = mysqli_query($connect, $query);
     return $filter_Result;
-}
+}*/
+
+$result = $connect->query($query);
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +49,7 @@ function filterTable($query2)
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/stylesheet.css" />
+  <link rel="stylesheet" href="css/stylesheet.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -54,28 +64,27 @@ function filterTable($query2)
       
 <div class="searchBar">
       <form action="index2.php" method="post">
-      <input type="text" name="valueToSearch" />
-      <input type="submit" name="search" value="Search!" />
+      <input type="text" name="search" />
+      <input type="submit" value="Search" />
       </form>
 </div>
         <h4>Zoeken op Entree Prijs</h4>
-        <h5><a href="#">5-15 Euro</a></h5><br/>
-        <h5><a href="#">15-25 Euro</a></h5><br/>
-        <h5><a href="#">25-35 Euro</a></h5><br/>
-        <h5><a href="#">35+ Euro</a></h5><br/>
+
+        <?php foreach(array('Tot 15 Euro', 'Tot 25 Euro', 'Tot 35 Euro', 'Vanaf 35 Euro') as $navigationprice): ?>
+          <h5><a href="?navprice=<?php print($navigationprice); ?>"><?php print($navigationprice); ?></a></h5><br />
+        <?php endforeach; ?>
+
+        <!--<h5><a href="#">Tot 15 Euro</a></h5><br/>
+        <h5><a href="#">Tot 25 Euro</a></h5><br/>
+        <h5><a href="#">Tot 35 Euro</a></h5><br/>
+        <h5><a href="#">Vanaf 35 Euro</a></h5><br/>-->
         <h4>Zoeken op Locatie</h4>
-        <h5><a href="#">Drenthe</a></h5><br/>
-        <h5><a href="#">Flevoland</a></h5><br/>
-        <h5><a href="#">Friesland</a></h5><br/>
-        <h5><a href="#">Gelderland</a></h5><br/>
-        <h5><a href="#">Groningen</a></h5><br/>
-        <h5><a href="#">Limburg</a></h5><br/>
-        <h5><a href="#">Noord-Brabant</a></h5><br/>
-        <h5><a href="#">Noord-Holland</a></h5><br/>
-        <h5><a href="#">Overijssel</a></h5><br/>
-        <h5><a href="#">Utrecht</a></h5><br/>
-        <h5><a href="#">Zeeland</a></h5><br/>
-        <h5><a href="#">Zuid-Holland</a></h5><br/>
+
+        <?php foreach(array('Drenthe', 'Flevoland', 'Friesland', 'Gelderland', 'Groningen', 'Limburg', 'Noord-Brabant', 'Noord-Holland', 'Overijssel', 'Utrecht', 'Zeeland', 'Zuid-Holland') as $state): ?>
+          <h5><a href="?location=<?php print($state); ?>"><?php print($state); ?></a></h5><br />
+        <?php endforeach; ?>
+
+
         <h4>Gemaakt Door:</h4>
         <h5><a href="#">Jim Moorrees</a></h5><br/>
         <h5><a href="#">Stan Rutten</a></h5><br/>
@@ -107,7 +116,7 @@ function filterTable($query2)
       
       <div class="pretpark-container">
       <table id="pretpark-table">
-      <?php while($pretpark = mysqli_fetch_array($search_result)){ 
+      <?php while($pretpark = mysqli_fetch_array($result)){ 
       echo "<tr>";
       if(file_exists(__DIR__ . '/img/'. $pretpark['ParkImage'])): ?>
       <td><img height="125px;" width="200px;"" src="/Wikiparks-Website/img/<?php print($pretpark['ParkImage']); ?>"></td>

@@ -2,7 +2,6 @@ body {
 	background: url('img/park2.jpg');
 	background-size: cover;
  	background-attachment: fixed;
-  	background-attachment: fixed;
   	font-family: sans-serif;
 	margin:0px;
 	padding:0px;
@@ -96,20 +95,7 @@ h1{
 	text-shadow: 2px 2px black;
 }
 
-.footer {
-  left: 0;
-  right: 0;
-  color: #fff;
-  bottom: 0;
-  padding: 1px;
-  position: absolute;
-  font-size: 20px;
-  border-top: 2px solid white;
-  background-color: darkorange;
-  text-align: center;
-}
-
-table, td, th {    z
+table, td, th {    
     border: 1px solid #ddd;
     text-align: left;
 }
@@ -168,12 +154,25 @@ body {
  * Footer Styles
  */
 
-.footer {
+/*.footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
+  background-color: darkorange;
+  text-align: center;
+}*/
+
+.footer {
+  left: 0;
+  right: 0;
+  color: #fff;
+  bottom: 0;
+  padding: 1px;
+  position: absolute;
+  font-size: 20px;
+  border-top: 2px solid white;
   background-color: darkorange;
   text-align: center;
 }

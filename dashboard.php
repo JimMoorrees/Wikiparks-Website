@@ -57,19 +57,61 @@ if(isset($_POST['top_3'])) {
 
 		<!-- <input type="text" placeholder="Leukste pretpark" name="top_1"> -->
 		<select class="balck" name="top_1">
-				<option>Toverland</option>
-				<option>HTML </option>
-				<option>HTML 5</option>
+				<option value="">-Je 1e keuze-</option>
+				<option>De Efteling</option>
+				<option>Attractiepark Duinrel</option>
+				<option>Attractiepark Slagharen</option>
+				<option>Walibi Holland</option>
+				<option>Avonturenpark Hellendoorn</option>
+				<option>Plopsaland Coevoorden</option>
+				<option>Prepark Drievliet</option>
+				<option>Koningin Juliana Toren</option>		
+				<option>Attractiepark Toverland</option>	
+				<option>Speelstad Oranje</option>
+				<option>Dippie Doe familiepark</option>
+				<option>Speelland Beekse Bergen</option>
+				<option>Linnaeushof</option>
+				<option>Billybird Park Hemelrijk</option>
+				<option>Waterspeelpark Splesj</option>
+				<option>Madurodam</option>
 		</select>
 		<select class="balck" name="top_2">
-				<option>Toverland</option>
-				<option>HTML </option>
-				<option>HTML 5</option>
+				<option value="">-Je 2e keuze-</option>
+				<option>De Efteling</option>
+				<option>Attractiepark Duinrel</option>
+				<option>Attractiepark Slagharen</option>
+				<option>Walibi Holland</option>
+				<option>Avonturenpark Hellendoorn</option>
+				<option>Plopsaland Coevoorden</option>
+				<option>Prepark Drievliet</option>
+				<option>Koningin Juliana Toren</option>		
+				<option>Attractiepark Toverland</option>	
+				<option>Speelstad Oranje</option>
+				<option>Dippie Doe familiepark</option>
+				<option>Speelland Beekse Bergen</option>
+				<option>Linnaeushof</option>
+				<option>Billybird Park Hemelrijk</option>
+				<option>Waterspeelpark Splesj</option>
+				<option>Madurodam</option>
 		</select>
 		<select class="balck" name="top_3">
-				<option>Toverland</option>
-				<option>HTML </option>
-				<option>HTML 5</option>
+				<option value="">-Je 3e keuze-</option>
+				<option>De Efteling</option>
+				<option>Attractiepark Duinrel</option>
+				<option>Attractiepark Slagharen</option>
+				<option>Walibi Holland</option>
+				<option>Avonturenpark Hellendoorn</option>
+				<option>Plopsaland Coevoorden</option>
+				<option>Prepark Drievliet</option>
+				<option>Koningin Juliana Toren</option>		
+				<option>Attractiepark Toverland</option>	
+				<option>Speelstad Oranje</option>
+				<option>Dippie Doe familiepark</option>
+				<option>Speelland Beekse Bergen</option>
+				<option>Linnaeushof</option>
+				<option>Billybird Park Hemelrijk</option>
+				<option>Waterspeelpark Splesj</option>
+				<option>Madurodam</option>
 		</select>
 
 		
@@ -88,12 +130,12 @@ if(isset($_POST['top_3'])) {
 
 	</form>
 
-	<h1>Zie hier je top 3 preparken: <?php if( isset($_SESSION['user_id']))
+	<h1>Zie hier je top 3 preparken:<?php if(isset($_SESSION['user_id']))
 		{ 
 			echo $_SESSION['email']; 
 		}  
 		else {
-			echo " gebruiker";
+			echo "Gebruiker";
 		}
 		?>.</h1>
 
@@ -110,7 +152,7 @@ if(isset($_POST['top_3'])) {
 		} 
 		else 
 		{
-			echo "Je bent niet ingelogd, dus er kunnen geen pretparken bewaard worden. ";
+			echo "Je moet inloggen om een top 3 te maken.";
 		} 
 		?>
 		</td>
@@ -121,7 +163,7 @@ if(isset($_POST['top_3'])) {
 		} 
 		else 
 		{
-			echo "Je bent niet ingelogd, dus er kunnen geen pretparken bewaard worden. ";
+			echo "Je moet inloggen om een top 3 te maken.";
 		} 
 		?>
 		</td>
@@ -131,7 +173,7 @@ if(isset($_POST['top_3'])) {
 		} 
 		else 
 		{
-			echo "Je bent niet ingelogd, dus er kunnen geen pretparken bewaard worden. ";
+			echo "Je moet inloggen om een top 3 te maken.";
 		} 
 		?>
 		</td>

@@ -13,9 +13,9 @@
           <li class="active"><a href="index.php" style="background-color: darkorange;" >Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="index2.php">Zoek</a></li>
-           <?php if(isset($_SESSION['user_id'])): ?>
+      
             <li><a href="dashboard.php"><span class=" glyphicon glyphicon-tasks"></span> Dashboard</a></li>
-          <?php endif ?>
+         
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <?php if(isset($_SESSION['user_id'])): ?>

@@ -1,6 +1,9 @@
 <?php
-
 session_start();
+
+
+// grab recaptcha library
+require_once "includes/recaptchalib.php";
 
 if( isset($_SESSION['user_id']) ){
 	header("Location: /WikiParksWeb/Wikiparks-Website");
@@ -20,18 +23,17 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 
 	if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
 		$_SESSION['user_id'] = $results['id'];
-		$_SESSION['email'] = $results['email'];
-		$_SESSION['top_1'] = $results['top_1'];
-		$_SESSION['top_2'] = $results['top_2'];
-		$_SESSION['top_3'] = $results['top_3'];
+		$_SESSION['email'] = htmlspecialchars($results['email']);
+		$_SESSION['top_1'] = htmlspecialchars($results['top_1']);
+		$_SESSION['top_2'] = htmlspecialchars($results['top_2']);
+		$_SESSION['top_3'] = htmlspecialchars($results['top_3']);
 		header("Location: dashboard.php");
 		exit();
 	} else {
-		$message = 'Sorry, those credentials do not match';
+		$message = '<span style="color:white;text-align:center;font-size:25px;text-shadow: 2px 2px black;">Sorry, de gebruikersnaam en/of wachtwoord zijn onjuist.</span>';
 	}
 
 endif;
-
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +46,7 @@ endif;
   <link rel="stylesheet" href="css/styleRegister.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 	<?php require_once('includes/header.php'); ?>
@@ -54,14 +57,16 @@ endif;
 
 
 	<h1>Login</h1>
-	<span style="color: white;">or <a href="signup.php" style="color: #3BD4D6;">register here</a></span>
+	<span style="color:white;text-align:center;font-size:25px;text-shadow: 2px 2px black;">or <a href="signup.php" style="color: #0098cb;">register here</a></span>
 
 	<form action="login.php" method="POST">
 		
-		<input type="text" placeholder="Enter your username" name="email"s>
+		<input type="text" placeholder="Enter your username" name="email">
 		<input type="password" placeholder="and password" name="password">
 
+
 		<input type="submit" value="Login">
+
 
 	</form>
 	

@@ -24,13 +24,13 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	$stmt->bindParam(':password', $pass);
 
 	if( $stmt->execute() ):
-		$message = '<span style="color:white;text-align:center;font-size:25px;">Successfully created new user</span>';
+		$message = '<span style="color:white;text-align:center;font-size:25px;text-shadow: 2px 2px black;">Account is succesvol aangemaakt.</span>';
 	else:
 		if($stmt->errorInfo()[1] === 1062) { // duplicate entry error
-			$message = '<span style="color:white;text-align:center;font-size:25px;">Er bestaat al een account met dat emailadress.</span>';
+			$message = '<span style="color:white;text-align:center;font-size:25px;text-shadow: 2px 2px black;">Er bestaat al een account met dat username.</span>';
 		} 
 		else{
-		$message = '<span style="color:white;text-align:center;font-size:25px;">Sorry there must have been an issue creating your account</span>';
+		$message = '<span style="color:white;text-align:center;font-size:25px;text-shadow: 2px 2px black;">Sorry maar het moet een probleem zijn met het aanmaken van je account</span>';
 		}
 	endif;
 
@@ -57,7 +57,7 @@ endif;
 	<?php endif; ?>
 
 	<h1>Register</h1>
-	<span>or <a href="login.php">login here</a></span>
+	<span style="color:white;text-align:center;font-size:25px;text-shadow: 2px 2px black;">or <a style="color: #0098cb;"href="login.php">login here</a></span>
 
 	<form action="signup.php" method="POST">
 		

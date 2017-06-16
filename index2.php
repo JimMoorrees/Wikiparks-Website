@@ -3,7 +3,13 @@ session_start();
 include ('functions/function.php');
  $connect = connectToDB();
 
+<<<<<<< Updated upstream
 $query = "SELECT `ParkId`,`ParkNaam`, `ParkNavigatiePrijzen`, `ParkLocatie`, `ParkProvincie`, `ParkImage`, `ParkOpeningsTijden`, `ParkPrijzen`,`ParkBeschrijving` FROM `park` WHERE 1=1";
+=======
+$query = "SELECT `ParkId`,`ParkNaam`, `ParkLocatie`, `ParkImage`, `ParkOpeningstijden`, `ParkPrijzen`,`ParkKorteBeschrijving` FROM `park`;";
+$result = $connect->query($query);
+
+>>>>>>> Stashed changes
 
 if(isset($_POST['search'])) 
 {
@@ -30,11 +36,17 @@ if(isset($_POST['search']))
     $search_result = filterTable($query);
 }
 
+
+
 // function to connect and execute the query
 function filterTable($query)
 {
     $connect = mysqli_connect("localhost", "root", "", "users");
+<<<<<<< Updated upstream
     $filter_Result = mysqli_query($connect, $query);
+=======
+    $filter_Result = mysqli_query($connect, $query2);
+>>>>>>> Stashed changes
     return $filter_Result;
 }*/
 
@@ -56,12 +68,8 @@ $result = $connect->query($query);
 <body>
 
 <?php require_once('includes/header.php'); ?>
-<!--<div class="banner">
-  <img src="img/banner3.jpeg" width="100%" height="250px;">
-</div>-->
-<div class="container-fluid">
-      <nav class="fixed-left">
-      
+
+
 <div class="searchBar">
       <form action="index2.php" method="post">
       <input type="text" name="search" />
@@ -83,7 +91,34 @@ $result = $connect->query($query);
         <?php foreach(array('Drenthe', 'Flevoland', 'Friesland', 'Gelderland', 'Groningen', 'Limburg', 'Noord-Brabant', 'Noord-Holland', 'Overijssel', 'Utrecht', 'Zeeland', 'Zuid-Holland') as $state): ?>
           <h5><a href="?location=<?php print($state); ?>"><?php print($state); ?></a></h5><br />
         <?php endforeach; ?>
+<div class="headingtext">
+<img style="margin: 0; display: block; " src="img/logowikiparks.png">
+</div>
+      <div class="pretpark-container">
+      <table id="pretpark-table">
+      <?php while($pretpark = mysqli_fetch_array($search_result)){ 
+      echo "<tr>";
+      if(file_exists(__DIR__ . '/img/'. $pretpark['ParkImage'])): ?>
+      <td><img height="125px;" width="200px;"" src="/Wikiparks-Website/img/<?php print($pretpark['ParkImage']); ?>"></td>
+      <?php else: ?>
+      <?php endif; 
+      echo "<td>".$pretpark['ParkNaam']."</td>";
+      echo "<td>".$pretpark['ParkLocatie']."</td>";
+      echo '<td><div id="ParkOpeningstijden">' . (isset($pretpark['ParkOpeningstijden'])) . '</div></td>';
+      echo '<td><div id="ParkPrijs">' . $pretpark['ParkPrijzen'] . '</div></td>';
+      echo '<td><div id="ParkKorteBeschrijving">' . $pretpark['ParkKorteBeschrijving'] . '</div></td>';
+      echo "</tr>"; 
+      ?> 
+      <tr class="filler"></tr> 
+      <?php
+      }
+      ?>       
+      </table>     
+      </div>
 
+
+      <div class="container-fluid">
+      <nav class="fixed-left">
 
         <h4>Gemaakt Door:</h4>
         <h5><a href="#">Jim Moorrees</a></h5><br/>
@@ -137,5 +172,19 @@ $result = $connect->query($query);
       </div>
 
 </div>
+
+<script>
+  $(function() {
+    $(window).on('resize', function resize()  {
+        $(window).off('resize', resize);
+        setTimeout(function () {
+            var content = $('#pretpark-table');
+            var top = (window.innerHeight - content.height()) / 2;
+            content.css('top', Math.max(0, top) + 'px');
+            $(window).on('resize', resize);
+        }, 50);
+    }).resize();
+});
+</script>
 </body>
 </html>
